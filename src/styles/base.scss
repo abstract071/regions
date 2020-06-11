@@ -28,8 +28,12 @@ code {
 .table-box {
   margin-bottom: 16px;
 
-  table tbody tr {
-    cursor: pointer;
+  table {
+    table-layout: fixed;
+
+    tbody tr {
+      cursor: pointer;
+    }
   }
 }
 

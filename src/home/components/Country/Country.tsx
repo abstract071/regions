@@ -63,7 +63,7 @@ const Country: React.FC = () => {
   }
 
   return (
-    <Grid className="hrz-center" item xs={ 10 }>
+    <Grid className="hrz-center" item xs sm={ 10 } md={ 6 }>
       {
         !isLoading ? (
           <Paper className="paper">
@@ -79,22 +79,22 @@ const Country: React.FC = () => {
               />
             </Card>
             <Typography variant="body1" gutterBottom>
-              Capital: { country.capital }
+              <b>Capital:</b> { country.capital }
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Population: { country.population }
+              <b>Population:</b> { country.population }
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Region: { country.region }
+              <b>Region:</b> { country.region }
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Sub region: { country.subregion }
+              <b>Sub region:</b> { country.subregion }
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Phone codes: { country.callingCodes.join( ', ' ) }
+              <b>Phone codes:</b> { country.callingCodes.join( ', ' ) }
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Time zones:
+              <b>Time zones:</b>
             </Typography>
             <List>
               {
@@ -106,7 +106,7 @@ const Country: React.FC = () => {
               }
             </List>
             <Typography variant="body1" gutterBottom>
-              Languages:
+              <b>Languages:</b>
             </Typography>
             <List>
               {
@@ -118,7 +118,7 @@ const Country: React.FC = () => {
               }
             </List>
             <Typography variant="body1" gutterBottom>
-              Currencies:
+              <b>Currencies:</b>
             </Typography>
             <List>
               {

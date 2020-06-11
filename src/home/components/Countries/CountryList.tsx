@@ -9,7 +9,6 @@ import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 
 import CountryListHead from './CountryListHead'
@@ -52,61 +51,59 @@ const CountryList: React.FC<ICountryListProps> = ( {
   }
 
   return (
-    <Grid>
-      <Paper className="paper">
-        <CountryListToolbar />
-        {
-          countries.length ? (
-            <Box className="table-box">
-              <Table stickyHeader>
-                <CountryListHead
-                  order={ order }
-                  orderBy={ orderBy }
-                  onSort={ handleSort }
-                />
-                <TableBody>
-                  {
-                    stableSort( countries, getComparator( order, orderBy ) )
-                      .map( ( row: any ) => {
-                        return (
-                          <TableRow
-                            hover
-                            tabIndex={ -1 }
-                            key={ row.name }
-                            onClick={ () => handleRowClick( row.name ) }
-                          >
-                            <TableCell align="left">
-                              <Typography>{ row.name } </Typography>
-                            </TableCell>
-                            <TableCell align="left">
-                              <Typography>{ row.region }</Typography>
-                            </TableCell>
-                            <TableCell align="left">
-                              <Typography>{ row.capital }</Typography>
-                            </TableCell>
-                            <TableCell align="left">
-                              <Typography>{ row.population }</Typography>
-                            </TableCell>
-                          </TableRow>
-                        )
-                      } )
-                  }
-                </TableBody>
-              </Table>
-            </Box>
-          ) : (
-            <Typography variant="h5" align="center" style={ { marginBottom: 30 } }>There is no data</Typography>
-          )
-        }
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={ () => history.goBack() }
-        >
-          Back
-        </Button>
-      </Paper>
-    </Grid>
+    <Paper className="paper">
+      <CountryListToolbar />
+      {
+        countries.length ? (
+          <Box className="table-box">
+            <Table stickyHeader>
+              <CountryListHead
+                order={ order }
+                orderBy={ orderBy }
+                onSort={ handleSort }
+              />
+              <TableBody>
+                {
+                  stableSort( countries, getComparator( order, orderBy ) )
+                    .map( ( row: any ) => {
+                      return (
+                        <TableRow
+                          hover
+                          tabIndex={ -1 }
+                          key={ row.name }
+                          onClick={ () => handleRowClick( row.name ) }
+                        >
+                          <TableCell align="left">
+                            <Typography>{ row.name } </Typography>
+                          </TableCell>
+                          <TableCell align="left">
+                            <Typography>{ row.region }</Typography>
+                          </TableCell>
+                          <TableCell align="left">
+                            <Typography>{ row.capital }</Typography>
+                          </TableCell>
+                          <TableCell align="left">
+                            <Typography>{ row.population }</Typography>
+                          </TableCell>
+                        </TableRow>
+                      )
+                    } )
+                }
+              </TableBody>
+            </Table>
+          </Box>
+        ) : (
+          <Typography variant="h5" align="center" style={ { marginBottom: 30 } }>There is no data</Typography>
+        )
+      }
+      <Button
+        variant="outlined"
+        color="primary"
+        onClick={ () => history.goBack() }
+      >
+        Back
+      </Button>
+    </Paper>
   )
 }
 

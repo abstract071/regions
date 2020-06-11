@@ -48,7 +48,7 @@ const Countries: React.FC = () => {
   }
 
   return (
-    <Grid className="hrz-center" item>
+    <Grid className="hrz-center" item xs md={ 10 }>
       {
         !isLoading ? (
           <CountryList

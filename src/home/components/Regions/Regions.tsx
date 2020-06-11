@@ -32,7 +32,7 @@ const Regions: React.FC = () => {
   }, [] )
 
   return (
-    <Grid className="hrz-center" item xs={ 6 }>
+    <Grid className="hrz-center" item xs sm={ 10 } md={ 6 }>
       {
         !isLoading ? (
           <SimpleList
