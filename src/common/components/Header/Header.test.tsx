@@ -1,15 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import App from './App'
+import Header from './Header'
 
 
-describe( 'App', () => {
+describe( 'Header', () => {
   let shallowedComponent: any = null
 
   beforeEach( () => {
     shallowedComponent = shallow(
-      <App />
+      <Header />
     )
   } )
 

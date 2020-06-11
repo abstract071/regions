@@ -7,7 +7,7 @@ type StateType = {
   data: any
 }
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   error: null,
   isLoading: true,
   data: null

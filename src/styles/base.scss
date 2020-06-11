@@ -27,6 +27,16 @@ code {
 
 .table-box {
   margin-bottom: 16px;
+
+  table tbody tr {
+    cursor: pointer;
+  }
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hrz-center {

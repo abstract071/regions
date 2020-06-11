@@ -35,7 +35,7 @@ runSaga()
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/regions">
       <Provider store={ store }>
         <ThemeProvider theme={ darkTheme }>
           <StylesProvider injectFirst>

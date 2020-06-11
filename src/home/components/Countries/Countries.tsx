@@ -6,7 +6,8 @@ import {
   useDispatch
 } from 'react-redux'
 import {
-  useLocation
+  useLocation,
+  Redirect
 } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -24,7 +25,7 @@ import {
 
 
 const Countries: React.FC = () => {
-  const { state } = useLocation()
+  const { state } = useLocation<any>()
   const {
     // error,
     isLoading,
@@ -33,12 +34,18 @@ const Countries: React.FC = () => {
   const dispatch = useDispatch()
 
   useEffect( () => {
-    dispatch( getCountriesByRegion( { region: state.region } ) )
+    if ( state && state.region ) {
+      dispatch( getCountriesByRegion( { region: state.region } ) )
+    }
 
     return () => {
       dispatch( resetCountriesByRegion() )
     }
   }, [] )
+
+  if ( !state ) {
+    return <Redirect to="/" />
+  }
 
   return (
     <Grid className="hrz-center" item>

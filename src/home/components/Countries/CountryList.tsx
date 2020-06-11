@@ -58,7 +58,7 @@ const CountryList: React.FC<ICountryListProps> = ( {
         {
           countries.length ? (
             <Box className="table-box">
-              <Table>
+              <Table stickyHeader>
                 <CountryListHead
                   order={ order }
                   orderBy={ orderBy }

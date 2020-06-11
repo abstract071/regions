@@ -7,7 +7,8 @@ import {
 } from 'react-redux'
 import {
   useHistory,
-  useLocation
+  useLocation,
+  Redirect
 } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
@@ -38,7 +39,7 @@ import classes from './Country.module.scss'
 
 
 const Country: React.FC = () => {
-  const { state } = useLocation()
+  const { state } = useLocation<any>()
   const {
     // error,
     isLoading,
@@ -48,12 +49,18 @@ const Country: React.FC = () => {
   const history = useHistory()
 
   useEffect( () => {
-    dispatch( getCountryByName( { name: state.name } ) )
+    if ( state && state.name ) {
+      dispatch( getCountryByName( { name: state.name } ) )
+    }
 
     return () => {
       dispatch( resetCountryByName() )
     }
   }, [] )
+
+  if ( !state ) {
+    return <Redirect to="/" />
+  }
 
   return (
     <Grid className="hrz-center" item xs={ 10 }>

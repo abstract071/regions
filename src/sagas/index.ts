@@ -13,7 +13,7 @@ import * as types from '../constants'
 import uniqWith from 'lodash/uniqWith'
 
 
-function* getRegionsSaga(): any {
+export function* getRegionsSaga(): any {
   try {
     yield put( { type: types.GET_REGIONS_REQUEST } )
 
@@ -53,7 +53,7 @@ interface IGetCountriesByRegionSagaAction {
   }
 }
 
-function* getCountriesByRegionSaga( { payload }: IGetCountriesByRegionSagaAction ): any {
+export function* getCountriesByRegionSaga( { payload }: IGetCountriesByRegionSagaAction ): any {
   try {
     yield put( { type: types.GET_COUNTRIES_BY_REGION_REQUEST } )
 
@@ -81,7 +81,7 @@ interface IGetCountryByNameSagaAction {
   }
 }
 
-function* getCountryByNameSaga( { payload }: IGetCountryByNameSagaAction ): any {
+export function* getCountryByNameSaga( { payload }: IGetCountryByNameSagaAction ): any {
   try {
     yield put( { type: types.GET_COUNTRY_BY_NAME_REQUEST } )
 

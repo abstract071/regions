@@ -1,15 +1,18 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import App from './App'
+import GoogleMap from './GoogleMap'
 
 
-describe( 'App', () => {
+describe( 'GoogleMap', () => {
   let shallowedComponent: any = null
 
   beforeEach( () => {
     shallowedComponent = shallow(
-      <App />
+      <GoogleMap
+        latitude={ 0 }
+        longitude={ 0 }
+      />
     )
   } )
 

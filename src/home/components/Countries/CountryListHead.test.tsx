@@ -1,15 +1,20 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import App from './App'
+import CountryListHead from './CountryListHead'
 
 
-describe( 'App', () => {
+describe( 'CountryListHead', () => {
   let shallowedComponent: any = null
+  let onSortMockFn = jest.fn()
 
   beforeEach( () => {
     shallowedComponent = shallow(
-      <App />
+      <CountryListHead
+        order="asc"
+        orderBy="name"
+        onSort={ onSortMockFn }
+      />
     )
   } )
 

@@ -1,15 +1,17 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import App from './App'
+import SimpleList from './SimpleList'
 
 
-describe( 'App', () => {
+describe( 'SimpleList', () => {
   let shallowedComponent: any = null
 
   beforeEach( () => {
     shallowedComponent = shallow(
-      <App />
+      <SimpleList
+        values={ ['Asia', 'Europe'] }
+      />
     )
   } )
 

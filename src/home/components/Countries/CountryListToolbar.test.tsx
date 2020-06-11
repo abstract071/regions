@@ -1,15 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import App from './App'
+import CountryListToolbar from './CountryListToolbar'
 
 
-describe( 'App', () => {
+describe( 'CountryListToolbar', () => {
   let shallowedComponent: any = null
 
   beforeEach( () => {
     shallowedComponent = shallow(
-      <App />
+      <CountryListToolbar />
     )
   } )
 
